@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="warehouse.ViewerHomeController">
+   <children>
+      <AnchorPane layoutX="400.0" layoutY="46.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="246.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="14.0" layoutY="11.0" text="Make sure to refresh before taking any actions and refresh to see changes" textFill="#0dcb85">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="refreshBtn" layoutX="870.0" layoutY="10.0" mnemonicParsing="false" onAction="#refresh" style="-fx-background-color: #0dcb85; -fx-background-radius: 5;" text="Refresh" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="buyCarBtn" layoutX="414.0" layoutY="547.0" mnemonicParsing="false" onAction="#buyCar" style="-fx-background-color: #0dcb85; -fx-background-radius: 5;" text="Buy this Car" textFill="WHITE" visible="false" AnchorPane.bottomAnchor="14.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <TableView fx:id="tableView" layoutX="273.0" layoutY="152.0" onMouseClicked="#updateLabel" prefHeight="200.0" prefWidth="423.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="600.0" prefWidth="246.0" style="-fx-background-color: #212226;" AnchorPane.leftAnchor="0.0">
+         <children>
+            <Label fx:id="message" alignment="CENTER" layoutY="155.0" prefHeight="40.0" prefWidth="246.0" text="Welcome, viewer!" textAlignment="CENTER" textFill="WHITE" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="51.0" layoutY="131.0" text="Car Warehouse" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Button fx:id="creditsButton" alignment="CENTER" layoutX="15.0" layoutY="504.0" mnemonicParsing="false" onAction="#showCredit" prefHeight="32.0" prefWidth="215.0" style="-fx-background-color: #2e364b; -fx-background-radius: 5;" text="Credits" textFill="WHITE" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="logoutButton" layoutX="15.0" layoutY="554.0" mnemonicParsing="false" onAction="#logoutAction" prefHeight="32.0" prefWidth="210.0" style="-fx-background-color: #ef2a4e; -fx-background-radius: 5;" text="Logout" textFill="WHITE" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="129.0" fitWidth="246.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../res/mainIcon.jpg" />
+               </image>
+            </ImageView>
+            <VBox alignment="CENTER" layoutY="212.0" prefHeight="256.0" prefWidth="246.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#showAllCars" prefHeight="40.0" prefWidth="282.0" style="-fx-background-color: #2e364b;" text="Show All Cars" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin></Button>
+                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="246.0">
+                     <children>
+                        <TextField fx:id="searchbyReg" prefHeight="30.0" prefWidth="168.0" promptText="Registration no" style="-fx-background-radius: 30;">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="searchByRegBtn" mnemonicParsing="false" onAction="#searchByReg" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #2e364b; -fx-background-radius: 30;" text="Search" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="67.0" prefWidth="246.0">
+                     <children>
+                        <VBox prefHeight="67.0" prefWidth="177.0">
+                           <children>
+                              <TextField fx:id="searchbyCarMake" prefHeight="30.0" prefWidth="103.0" promptText="Car make" style="-fx-background-radius: 30;">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="searchbyCarModel" prefHeight="30.0" prefWidth="103.0" promptText="Car model" style="-fx-background-radius: 30;">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                        </VBox>
+                        <Button fx:id="searchByMakeModelBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#searchByMakeModel" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #2e364b; -fx-background-radius: 30;" text="Search" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Label fx:id="selectedLabel" layoutX="108.0" layoutY="434.0" textFill="WHITE" />
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" color="#2e364b" height="8.86" radius="6.965" spread="0.01" />
+         </effect>
+      </AnchorPane>
+   </children>
+</AnchorPane>
