@@ -1,6 +1,6 @@
-# JavaFX-Project-Car-Dealership
+# Car Dealership JavaFX Project
 
-## Project Overview
+## Overview
 This program is built on `JavaFX` in order to showcase the `Socket networking` and `multi-threading` support of Java
 
 ## Features
